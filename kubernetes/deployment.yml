@@ -4,7 +4,7 @@ metadata:
    name: nodejs-deployment
 spec:
    replicas: 1
-   selector: 
+   selector:
      matchLabels:
        app: nodejs-app
    template:
@@ -18,11 +18,11 @@ spec:
         ports:
         - containerPort: 3000
         env:
-        - name: port
+        - name: PORT
           valueFrom:
             configMapKeyRef:
                name: nodejs-config
-               key: PORT
+               key: port
         livenessProbe:
           httpGet:
             path: /
