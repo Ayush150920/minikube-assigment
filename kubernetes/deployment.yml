@@ -18,7 +18,7 @@ spec:
         ports:
         - containerPort: 3000
         env:
-        - name: PORT
+        - name: port
           valueFrom:
             configMapKeyRef:
                name: nodejs-config
